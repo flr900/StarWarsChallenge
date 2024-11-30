@@ -67,6 +67,109 @@ Este módulo fornece uma camada de abstração para acessar e manipular dados no
 Ponto de entrada principal da aplicação. Orquestra o processo de extração, transformação e carregamento de dados (ETL).  
 - Provavelmente utiliza os módulos de API para buscar dados, os módulos de processamento para transformar os dados e os módulos de banco de dados/repositórios para armazená-los.
 
+## Análise de Dados e Insights
+
+Este repositório contém três notebooks Jupyter que exploram e analisam os dados dos filmes da franquia Star Wars. Cada notebook é focado em um aspecto específico, utilizando dados extraídos da **Star Wars API (SWAPI)**, enriquecidos com informações adicionais de outras fontes, como a API do OMDb. Abaixo, você encontrará uma descrição detalhada de cada notebook e os insights gerados.
+
+### 1. **Desempenho Monetário dos Filmes**
+**Arquivo**: `monetary_performance_analysis.ipynb`
+
+#### **Descrição**:
+Este notebook analisa o desempenho financeiro dos filmes da franquia Star Wars. Os dados utilizados incluem bilheteria, prêmios e número de votos no IMDb, permitindo identificar padrões relacionados ao sucesso comercial.
+
+#### **Principais Métricas e Insights**:
+- Filme com maior arrecadação (`BoxOffice`).
+- Relação entre bilheteria e avaliação no IMDb (`imdbRating`) ou na crítica (`Metascore`, `tomatoesRating`).
+- Médias de bilheteria por diretor e produtor.
+- Impacto de prêmios (`Awards`) no desempenho financeiro.
+
+---
+
+### 2. **Críticas e Avaliações**
+**Arquivo**: `reviews_and_ratings_analysis.ipynb`
+
+#### **Descrição**:
+Este notebook examina as avaliações dos filmes em plataformas como IMDb, Rotten Tomatoes e Metacritic, explorando discrepâncias e tendências entre as diferentes fontes de crítica.
+
+#### **Principais Métricas e Insights**:
+- Comparação entre avaliações do IMDb e Rotten Tomatoes.
+- Gêneros (`Genre`) mais bem avaliados na franquia.
+- Filmes com maior discrepância entre avaliações das plataformas.
+- Evolução das críticas ao longo do tempo.
+
+---
+
+### 3. **Análise do Enredo e Narrativa**
+**Arquivo**: `plot_analysis.ipynb`
+
+#### **Descrição**:
+Neste notebook, analisamos os dados relacionados aos enredos dos filmes, bem como aspectos da narrativa (como escritores, diretores e classificação indicativa). O objetivo é entender como esses fatores impactam a recepção crítica e do público.
+
+#### **Principais Métricas e Insights**:
+- Filmes com enredos mais curtos ou longos (`Plot`) e sua relação com as avaliações.
+- Relação entre duração (`Runtime`) e recepção crítica.
+- Impacto da classificação indicativa (`Rated`) no sucesso dos filmes.
+- Comparação entre os escritores dos filmes e suas avaliações.
+
+---
+
+## **Como Utilizar os Notebooks**
+
+1. **Instalar Dependências**:
+   Certifique-se de que as bibliotecas necessárias estão instaladas:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Executar o Notebook**:
+   - Navegue até o diretório do projeto:
+     ```bash
+     cd starwars-analysis
+     ```
+   - Inicie o Jupyter Notebook:
+     ```bash
+     jupyter notebook
+     ```
+   - Abra o notebook desejado (`monetary_performance_analysis.ipynb`, `reviews_and_ratings_analysis.ipynb` ou `plot_analysis.ipynb`).
+
+3. **Configurar a Conexão com o Banco de Dados**:
+   - Certifique-se de que o banco de dados MySQL está configurado e que os dados estão disponíveis.
+   - Atualize a célula de configuração no início de cada notebook com as credenciais do banco de dados:
+     ```python
+     DATABASE_CONFIG = {
+         'host': 'localhost',
+         'user': 'root',
+         'password': 'sua_senha',
+         'database': 'starwars'
+     }
+     ```
+
+---
+
+### **Dependências**
+
+- **Bibliotecas Python**:
+  - `pandas`
+  - `sqlalchemy`
+  - `pymysql`
+  - `matplotlib` (para gráficos)
+  - `seaborn` (para visualizações avançadas)
+
+- **Ferramentas**:
+  - Jupyter Notebook
+  - MySQL 8.0
+
+---
+
+### **Insights e Resultados**
+
+Os notebooks oferecem uma análise abrangente e visual dos dados da franquia Star Wars, permitindo identificar padrões e responder a perguntas como:
+- Quais fatores influenciam o sucesso financeiro e crítico dos filmes?
+- Como os aspectos narrativos e visuais impactam as avaliações?
+- Quais tendências podem ser observadas entre os diferentes episódios?
+
+---
+
 ## Executando a Aplicação
 
 ### **Passo a Passo: Subindo o Banco de Dados com o Arquivo SQL Dump**
@@ -172,112 +275,5 @@ Depois que o banco de dados for restaurado:
   - DB_HOST=localhost
   - DB_PORT=3306
   - DB_NAME=star_wars
-  
+
 - Como executar o script `python -m app.main.py`
-
-## Análise de Dados e Insights
-
-# **Star Wars Data Analysis: Jupyter Notebooks**
-
-Este repositório contém três notebooks Jupyter que exploram e analisam os dados dos filmes da franquia Star Wars. Cada notebook é focado em um aspecto específico, utilizando dados extraídos da **Star Wars API (SWAPI)**, enriquecidos com informações adicionais de outras fontes, como a API do OMDb. Abaixo, você encontrará uma descrição detalhada de cada notebook e os insights gerados.
-
----
-
-## **Notebooks Disponíveis**
-
-### 1. **Desempenho Monetário dos Filmes**
-**Arquivo**: `monetary_performance_analysis.ipynb`
-
-#### **Descrição**:
-Este notebook analisa o desempenho financeiro dos filmes da franquia Star Wars. Os dados utilizados incluem bilheteria, prêmios e número de votos no IMDb, permitindo identificar padrões relacionados ao sucesso comercial.
-
-#### **Principais Métricas e Insights**:
-- Filme com maior arrecadação (`BoxOffice`).
-- Relação entre bilheteria e avaliação no IMDb (`imdbRating`) ou na crítica (`Metascore`, `tomatoesRating`).
-- Médias de bilheteria por diretor e produtor.
-- Impacto de prêmios (`Awards`) no desempenho financeiro.
-
----
-
-### 2. **Críticas e Avaliações**
-**Arquivo**: `reviews_and_ratings_analysis.ipynb`
-
-#### **Descrição**:
-Este notebook examina as avaliações dos filmes em plataformas como IMDb, Rotten Tomatoes e Metacritic, explorando discrepâncias e tendências entre as diferentes fontes de crítica.
-
-#### **Principais Métricas e Insights**:
-- Comparação entre avaliações do IMDb e Rotten Tomatoes.
-- Gêneros (`Genre`) mais bem avaliados na franquia.
-- Filmes com maior discrepância entre avaliações das plataformas.
-- Evolução das críticas ao longo do tempo.
-
----
-
-### 3. **Análise do Enredo e Narrativa**
-**Arquivo**: `plot_analysis.ipynb`
-
-#### **Descrição**:
-Neste notebook, analisamos os dados relacionados aos enredos dos filmes, bem como aspectos da narrativa (como escritores, diretores e classificação indicativa). O objetivo é entender como esses fatores impactam a recepção crítica e do público.
-
-#### **Principais Métricas e Insights**:
-- Filmes com enredos mais curtos ou longos (`Plot`) e sua relação com as avaliações.
-- Relação entre duração (`Runtime`) e recepção crítica.
-- Impacto da classificação indicativa (`Rated`) no sucesso dos filmes.
-- Comparação entre os escritores dos filmes e suas avaliações.
-
----
-
-## **Como Utilizar os Notebooks**
-
-1. **Instalar Dependências**:
-   Certifique-se de que as bibliotecas necessárias estão instaladas:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Executar o Notebook**:
-   - Navegue até o diretório do projeto:
-     ```bash
-     cd starwars-analysis
-     ```
-   - Inicie o Jupyter Notebook:
-     ```bash
-     jupyter notebook
-     ```
-   - Abra o notebook desejado (`monetary_performance_analysis.ipynb`, `reviews_and_ratings_analysis.ipynb` ou `plot_analysis.ipynb`).
-
-3. **Configurar a Conexão com o Banco de Dados**:
-   - Certifique-se de que o banco de dados MySQL está configurado e que os dados estão disponíveis.
-   - Atualize a célula de configuração no início de cada notebook com as credenciais do banco de dados:
-     ```python
-     DATABASE_CONFIG = {
-         'host': 'localhost',
-         'user': 'root',
-         'password': 'sua_senha',
-         'database': 'starwars'
-     }
-     ```
-
----
-
-## **Dependências**
-
-- **Bibliotecas Python**:
-  - `pandas`
-  - `sqlalchemy`
-  - `pymysql`
-  - `matplotlib` (para gráficos)
-  - `seaborn` (para visualizações avançadas)
-
-- **Ferramentas**:
-  - Jupyter Notebook
-  - MySQL 8.0
-
----
-
-## **Insights e Resultados**
-
-Os notebooks oferecem uma análise abrangente e visual dos dados da franquia Star Wars, permitindo identificar padrões e responder a perguntas como:
-- Quais fatores influenciam o sucesso financeiro e crítico dos filmes?
-- Como os aspectos narrativos e visuais impactam as avaliações?
-- Quais tendências podem ser observadas entre os diferentes episódios?
