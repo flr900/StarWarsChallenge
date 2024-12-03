@@ -10,29 +10,27 @@ configure_logging(log_level=logging.DEBUG)
 
 check_db_connection()
 
-# GET PEOPLE DATA FROM API ##
+people_transform = PeopleTransform()
+bulk_load = people_transform.batch_load_people_data()
+logging.info("Updated people data successfully!")
 
-# people_transform = PeopleTransform()
-# bulk_load = people_transform.batch_load_people_data()
-# logging.info("Updated people data successfully!")
-
-# filme_transformation = FilmsTransform()
-# bulk_load = filme_transformation.batch_load_film_data()
-# logging.info("Updated film data successfully!")
+filme_transformation = FilmsTransform()
+bulk_load = filme_transformation.batch_load_film_data()
+logging.info("Updated film data successfully!")
 
 
 planet_transform = PlanetTransform()
 bulk_load = planet_transform.batch_load_data()
 logging.info("Updated planet data successfully!")
 
-# starship_transform = StarshipTransform()
-# bulk_load = starship_transform.batch_load_data()
-# logging.info("Updated starship data successfully!")
+starship_transform = StarshipTransform()
+bulk_load = starship_transform.batch_load_data()
+logging.info("Updated starship data successfully!")
 
-# Vehicle_transform = VehicleTransform()
-# bulk_load = Vehicle_transform.batch_load_data()
-# logging.info("Updated vehicles data successfully!")
+Vehicle_transform = VehicleTransform()
+bulk_load = Vehicle_transform.batch_load_data()
+logging.info("Updated vehicles data successfully!")
 
-# species_transform = SpeciesTransform()
-# bulk_load = species_transform.batch_load_data()
-# logging.info("Updated species data successfully!")
+species_transform = SpeciesTransform()
+bulk_load = species_transform.batch_load_data()
+logging.info("Updated species data successfully!")

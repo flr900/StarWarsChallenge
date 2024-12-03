@@ -80,8 +80,8 @@ Este notebook analisa o desempenho financeiro dos filmes da franquia Star Wars. 
 #### **Principais Métricas e Insights**:
 - Filme com maior arrecadação (`BoxOffice`).
 - Relação entre bilheteria e avaliação no IMDb (`imdbRating`) ou na crítica (`Metascore`, `tomatoesRating`).
+- Análise de bilheteria ao longo do tempo.
 - Médias de bilheteria por diretor e produtor.
-- Impacto de prêmios (`Awards`) no desempenho financeiro.
 
 ---
 
@@ -92,10 +92,9 @@ Este notebook analisa o desempenho financeiro dos filmes da franquia Star Wars. 
 Este notebook examina as avaliações dos filmes em plataformas como IMDb, Rotten Tomatoes e Metacritic, explorando discrepâncias e tendências entre as diferentes fontes de crítica.
 
 #### **Principais Métricas e Insights**:
-- Comparação entre avaliações do IMDb e Rotten Tomatoes.
-- Gêneros (`Genre`) mais bem avaliados na franquia.
-- Filmes com maior discrepância entre avaliações das plataformas.
-- Evolução das críticas ao longo do tempo.
+- FIlmes com mais premiações do oscar
+- Comparação entre avaliações do IMDb, Metacritic e Rotten Tomatoes.
+- Filmes melhores avalidos da franquia.
 
 ---
 
@@ -106,10 +105,10 @@ Este notebook examina as avaliações dos filmes em plataformas como IMDb, Rotte
 Neste notebook, analisamos os dados relacionados aos enredos dos filmes, bem como aspectos da narrativa (como escritores, diretores e classificação indicativa). O objetivo é entender como esses fatores impactam a recepção crítica e do público.
 
 #### **Principais Métricas e Insights**:
-- Filmes com enredos mais curtos ou longos (`Plot`) e sua relação com as avaliações.
-- Relação entre duração (`Runtime`) e recepção crítica.
-- Impacto da classificação indicativa (`Rated`) no sucesso dos filmes.
-- Comparação entre os escritores dos filmes e suas avaliações.
+- Planetas que mais apareceram na história da franquia.
+- Personagens que mais pilotaram naves durante a franquia.
+- Quais foram as naves mais rápidas.
+- Personagens que tiveram mais veiculos.
 
 ---
 
